@@ -2,6 +2,7 @@
 
 * Студент: [Андрей Канубриков](https://up.htmlacademy.ru/htmlcss/40/user/2518609).
 * Наставник: [Дина Шарипова](https://htmlacademy.ru/profile/id1418957).
+* Сайт: [My project SEDONA](https://kanagen.github.io/2518609-sedona-40/).
 
 ---
 
