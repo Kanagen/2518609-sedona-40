@@ -15,7 +15,14 @@
 }
 
 .visually-hidden {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 body {
@@ -58,7 +65,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -68,6 +75,7 @@ body {
   height: 64px;
   box-sizing: border-box;
   display: flex;
+  margin-left: 30px;
 }
 
 .main-menu-item {
@@ -91,6 +99,7 @@ body {
   display: flex;
   align-items: center;
   box-sizing: border-box;
+  margin-left: 285px;
 }
 
 .user-menu-item {
@@ -125,6 +134,7 @@ body {
   width: 160px;
   height: 36px;
   display: flex;
+  margin-left: auto;
   border-radius: 4px;
   justify-content: center;
   align-items: center;
@@ -158,6 +168,7 @@ body {
   justify-content: center;
   align-items: center;
   background-image: url(../images/hero.jpg);
+  background-color: #757b7e;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -192,11 +203,24 @@ body {
   background-color: #82B3D3;
 }
 
+.advantages-list-item:first-child::after {
+  content: url(../images/sedona-street.jpg);
+  width: 800px;
+  height: 385px;
+}
+
+.advantages-list-item:last-child::before {
+  content: url(../images/devil-bridge.jpg);
+  width: 800px;
+  height: 385px;
+}
+
 .advantages-list-item:nth-child(3) {
   background-color: rgba(130, 179, 211, 20%);
 }
 
-.advantages-list-item {
+.advantages-list-item,
+.content-wrapper {
   width: 400px;
   height: 385px;
   text-align: center;
@@ -315,7 +339,8 @@ body {
 .subscrib-form {
   font-size: 22px;
   font-weight: 400;
-  text-align: center;
+  display: flex;
+  justify-content: stretch;
   width: 684px;
   height: 52px;
   box-sizing: border-box;
@@ -325,17 +350,29 @@ body {
 .subscrib-fild {
   font-size: 18px;
   font-weight: 400;
-  width: 447px;
-  height: 52px;
+  line-height: 133%;
+  width: 100%;
+  height: 100%;
   box-sizing: border-box;
-
+  flex-grow: 2;
+  padding-left: 20px;
+  border-radius: 4px 0 0 4px;
 }
 
 .subscrBtn {
-  width: 230px;
-  height: 52px;
-  box-sizing: border-box;
-
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 180%;
+  text-transform: uppercase;
+  width: 240px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius:  0 4px 4px 0;
+  border: none;
+  background-color: #82B3D3;
+  color: #ffffff;
 }
 
 .page-footer {
@@ -393,7 +430,7 @@ body {
   background-image: url(../images/inner-filter.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #000000;
+  background-color:#756157;
   color: #ffffff;
 }
 
@@ -404,6 +441,10 @@ body {
   height: 21px;
   display: flex;
   margin-bottom: 40px;
+  color: inherit;
+}
+.breadcrumbs-link {
+  color: inherit;
 }
 
 .catalog-filter-form {
@@ -547,6 +588,11 @@ body {
   border-radius: 4px;
   background-color: #82B3D3;
   color: #ffffff;
+}
+
+.pagination-item:first-child {
+  background-color: #F2F2F2;
+  color: inherit;
 }
 
 .pagination-item:nth-child(5) {
