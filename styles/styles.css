@@ -72,6 +72,8 @@ body {
   text-decoration: none;
   color: inherit;
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 .title {
@@ -128,8 +130,16 @@ body {
 .navigation-link {
   padding: 16px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+}
+
+.navigation-link:hover::after,
+.curent-link::after {
+  content: " ";
+    width: 100%;
+    outline: 2px solid #756257;
+    position: relative;
+    top: 20px;
 }
 
 /* .navigation-link:hover {
@@ -248,7 +258,6 @@ body {
   min-width: 400px;
   text-align: center;
   padding: 100px 50px;
-  box-sizing: border-box;
 }
 
 .coloredBlue {
@@ -311,11 +320,14 @@ body {
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 60px;
 }
 
 .item-description {
   font-size: 18px;
   font-weight: 400;
+  margin: 0;
 }
 
 .booking {
@@ -574,6 +586,10 @@ body {
   border-radius: 4px 0 0 4px;
 }
 
+.up-price {
+  border-radius: 0 4px 4px 0;
+}
+
 .range-handler {
   width: 100%;
   height: 13%;
@@ -593,7 +609,7 @@ body {
   text-align: center;
   border-radius: 4px;
   border: none;
-  padding: 8px 50px;
+  padding: 8px 30px;
   background-color: #82B3D3;
   color: #ffffff;
 }
@@ -609,7 +625,7 @@ body {
 .search-result {
   font-size: 18px;
   font-weight: 400;
-  max-width: 100%;
+  min-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -662,54 +678,55 @@ body {
 .hotel-list {
   font-size: 18px;
   font-weight: 400;
-  width: 100%;
-  height: fit-content;
+  min-width: 100%;
   padding-bottom: 40px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: repeat(auto, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr) );
   gap: 20px;
-  border-bottom: 1px groove #756257;
+  border-bottom: 1px solid #E6E6E6;
 }
 
 .hotel-card {
-  /* width: 340px;
-  height: 438px; */
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  display: grid;
+  grid-template-columns: 140px 140px;
+  grid-template-rows: auto 21px 36px 36px;
+  gap: 16px 20px;
+  padding: 20px;
   border: 1px solid #E6E6E6;
   border-radius: 4px;
 }
 
 .hotel-card-link {
-  font-size: 24px;
-  font-weight: 700;
-  width: 300px;
-  height: fit-content;
-  text-align: left;
-  box-sizing: border-box;
-  margin: 20px auto 0;
+  grid-column: 1/-1;
 }
 
 .hotel-card-title {
+  font-size: 24px;
+  font-weight: 700;
   margin-bottom: 0;
+  margin-top: 16px;
+  text-align: left;
 }
 
-.apointment-list {
-  width: 300px;
-  height: fit-content;
-}
+.living-type,
+  .living-price,
+  .more,
+  .favorite,
+  .range-stars,
+  .range-text {
+    align-self: center;
+  }
 
-.apointment-item {
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .living-price,
+  .range-text {
+    justify-self: end;
+  }
+
+  .range-text {
+    text-transform: uppercase;
+  }
 
 .apointment-btn {
   font-weight: 700;
@@ -717,10 +734,9 @@ body {
   line-height: 125%;
   text-transform: uppercase;
   text-align: center;
-  width: 47%;
-  height: 2.5rem;
+  width: 100%;
   border-radius: 4px;
-  border-color: transparent;
+  border: none;
   padding: 8px;
   background-color: #756157;
   color: #ffffff;
@@ -735,14 +751,14 @@ body {
   font-size: 18px;
   line-height: 125%;
   text-transform: uppercase;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .pagination {
   font-size: 20px;
   font-weight: 700;
   width: 100%;
-  height: 60px;
+  /* height: 60px; */
   margin-top: 40px;
   background-color: #ffffff;
   color: #000000;
@@ -750,7 +766,7 @@ body {
 
 .pagination-list {
   width: fit-content;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -758,8 +774,11 @@ body {
 }
 
 .pagination-item {
-  width: 60px;
-  height: 60px;
+  min-width: 60px;
+  /* height: 60px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-right: 8px;
   border-radius: 4px;
   background-color: #82B3D3;
@@ -777,9 +796,7 @@ body {
 }
 
 .pagination-item-link {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* width: 100%;
+  height: 100%; */
+  padding: 20px;
 }
