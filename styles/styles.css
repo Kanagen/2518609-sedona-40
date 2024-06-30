@@ -698,6 +698,10 @@ body {
   border-radius: 4px;
 }
 
+.hotel-card-image {
+  max-width: 100%
+}
+
 .hotel-card-link {
   grid-column: 1/-1;
 }
