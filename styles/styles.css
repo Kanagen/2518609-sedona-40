@@ -797,10 +797,6 @@ body {
 
 }
 
-.viewBtn a:focus {
-  border: 2px solid #68A2CA;
-}
-
 .viewBtn:hover {
   border: 2px solid #000000;
 }
